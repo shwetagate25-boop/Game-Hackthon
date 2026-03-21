@@ -1,0 +1,318 @@
+/* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    margin: 0;
+    color: white;
+}
+
+.container {
+    margin: 60px auto;
+    width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(30, 30, 47, 0.9);
+    box-shadow: 0 0 30px #00f7ff;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: #00f7ff;
+    text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+button {
+    font-size: 18px;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+
+    box-shadow: 
+        0 5px #000,
+        0 0 10px #6a11cb,
+        0 0 20px #2575fc;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 
+        0 10px #000,
+        0 0 20px #00f7ff,
+        0 0 40px #00f7ff;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 3px #000;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00f7ff;
+    animation: fade 0.5s ease;
+}
+
+
+.restart {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    margin-top: 15px;
+}
+
+
+.emoji {
+    position: fixed;
+    font-size: 30px;
+    animation: floatUp 2s linear forwards;
+    pointer-events: none;
+    text-shadow: 0 0 10px yellow, 0 0 20px white;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-250px);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+} */
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    margin: 0;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Container Glow Animation */
+.container {
+    margin: 60px auto;
+    width: 380px;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(30, 30, 47, 0.9);
+    box-shadow: 0 0 20px #00f7ff;
+    backdrop-filter: blur(12px);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 15px #00f7ff; }
+    to { box-shadow: 0 0 35px #00f7ff, 0 0 60px #00f7ff; }
+}
+
+/* Title Animation */
+h1 {
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 30px #00f7ff;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* IMAGE STYLING (BIG + ATTRACTIVE) */
+img {
+    width: 200px;   /* 👈 bigger image */
+    height: auto;
+    margin: 15px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ffcc00;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Score */
+.score {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    font-size: 18px;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+
+    box-shadow: 
+        0 5px #000,
+        0 0 10px #91a4e8,
+        0 0 20px #91a4e8;
+
+    transition: 0.3s;
+}
+
+/* Button Hover Animation */
+button:hover {
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 
+        0 10px #000,
+        0 0 25px #00f7ff,
+        0 0 50px #00f7ff;
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Result Box */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00f7ff;
+    animation: fade 0.5s ease;
+}
+
+/* Restart Button */
+.restart {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+/* Floating Emoji Animation 🎉 */
+.emoji {
+    position: fixed;
+    font-size: 35px;
+    animation: floatUp 2s linear forwards;
+    pointer-events: none;
+    text-shadow: 0 0 10px yellow, 0 0 20px white;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+}
+
+/* Confetti Explosion 🎊 */
+.confetti {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    background: red;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Fade */
+@keyframes fade {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    img {
+        width: 150px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+#history {
+    margin-top: 15px;
+    max-height: 120px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    font-size: 14px;
+    text-align: left;
+}

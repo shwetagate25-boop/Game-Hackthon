@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battle Arena - Rock Paper Scissors</title>
+    <link rel="stylesheet" href="Index.CSS">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⚔️ Battle Arena</h1>
+    <p>Rock Paper Scissors Game 🎮</p>
+
+    <div class="score">
+        <p>👦 Player: <span id="userScore">0</span></p>
+        <p>🤖 Computer: <span id="compScore">0</span></p>
+    </div>
+
+    <div class="choices">
+        <button onclick="play('rock')">🪨 Rock</button>
+        <button onclick="play('paper')">📄 Paper</button>
+        <button onclick="play('scissors')">✂️ Scissors</button>
+    </div>
+
+    <div id="result">Make your move 😎</div>
+isko sai kar du 
+    <div id="history"></div>
+
+    <button class="restart" onclick="resetGame()">🔄 Restart Game</button>
+
+</div>
+
+<audio id="winSound" src="freesound_community-triumphant-yes-x2-103141.mp3"></audio>
+<audio id="loseSound" src="make_more_sound-8-bit-video-game-fail-version-2-145478.mp3"></audio>
+
+
+<script src="Index.JS"></script>
+
+</body>
+</html>
