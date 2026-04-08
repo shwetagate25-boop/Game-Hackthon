@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tip Calculator</title>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Tip Calculator</h2>
+
+<label>Bill Amount</label>
+<input type="number" id="bill">
+
+<label>Tip Amount</label>
+<input type="number" id="tip">
+
+<label>Number of People</label>
+<input type="number" id="people">
+
+<button onclick="calculator()">Calculate</button>
+
+<div class="result">
+<p>Tip per Person: <span id="tipPerson"></span></p>
+<p>Total per Person: <span id="perPerson"></span></p>
+</div>
+
+</div>
+
+<style>
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#12cfc0;
+font-family:Arial;
+}
+
+.container{
+width:320px;
+background:rgb(158, 244, 227);
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+text-align:left;
+}
+
+input{
+margin-top:5px;
+padding:8px;
+width:100%;
+border-radius:5px;
+border:1px solid gray;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:15px;
+background:#109696;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+
+}
+
+button:hover{
+background:#2c406c;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+</style>
+
+
+ <script>
+function calculator(){
+
+let bill = Number(document.getElementById("bill").value);
+let tip = Number(document.getElementById("tip").value);
+let people = Number(document.getElementById("people").value);
+
+if(bill == "" || tip == "" || people <= 0){
+  alert("Please enter valid values");
+  return;
+}
+
+let total = bill + tip;
+
+let tipPerPerson = tip / people;
+let perPerson = total / people;
+
+document.getElementById("tipPerson").innerText = tipPerPerson;
+document.getElementById("perPerson").innerText = perPerson;
+}
+</script>
+
+</body>
+</html>
+

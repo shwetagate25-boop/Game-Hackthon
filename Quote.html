@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the day</title>
+</head>
+<body>
+
+<div class="container">
+<h2>Quote Generator</h2>
+
+<p id="quote">Click button to get a quote</p>
+
+<button onclick="showQuote()">New Quote</button>
+
+</div>
+
+
+<style>
+body {
+    background-color: rgb(164, 236, 244);
+    display: flex;
+    justify-content: center;  
+    align-items: flex-start;  
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgb(124, 185, 232);
+    padding: 30px;
+    border-radius: 12px; 
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    margin-top: 100px; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+    </style>
+
+
+<script>
+let quotes = [
+  "Believe in yourself",
+  "Never give up",
+  "Work hard in silence",
+  "Success takes time",
+  "Stay positive"
+];
+
+function showQuote() {
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+  let randomQuote = quotes[randomIndex];
+  document.getElementById("quote").innerText = randomQuote;
+}
+</script>
+
+</body>
+</html>

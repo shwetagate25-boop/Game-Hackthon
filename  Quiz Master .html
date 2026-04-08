@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <link rel="stylesheet" href="Quiz.CSS">
+</head>
+<body>
+
+<div class="quiz-container">
+
+    <h1>Quiz Master</h1>
+
+    <button id="start">Start Quiz</button>
+
+    
+    <div id="quiz" style="display: none;">
+
+        <h2 id="question"></h2>
+        <p id="progress"></p>
+
+        <div id="options"></div>
+
+        <p id="time"></p>
+
+    </div>
+
+    
+    <div id="result" style="display: none;">
+        <h2 id="score"></h2>
+        <p id="emoji"></p>
+
+       
+        <button id="restart">Restart Quiz</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+const startBtn = document.getElementById("start");
+const quizBox = document.getElementById("quiz");
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const scoreEl = document.getElementById("score");
+const resultBox = document.getElementById("result");
+const restartBtn = document.getElementById("restart");
+
+let currentQuestion = 0;
+let score = 0;
+
+const questions = [
+    {
+        question: "What is JavaScript mainly used for?",
+        options: ["Styling", "Structure",
+                "Adding interactivity", "Database"],
+        answer: "Adding interactivity"
+    },
+  {
+        question:"Which keyword is used to declare a variable?",
+        options: ["var","let","const","All of the above"],
+        answer: "All of the above"
+    },
+  {
+        question: "Which symbol is used for comments in JavaScript?",
+        options: ["//","<--!>","##","**"],
+        answer: "//"
+    },
+  {
+        question: "Which data type is used for text?",
+        options:["Number","String","Boolean","Object"],
+        answer: "String"
+   },
+
+  {
+        question:"What will typeof true return?",
+        options:["string","boolean", "number", "undefined"],
+        answer:"boolean"
+  },
+ {
+        question:"What does HTML stand for?",
+        options:["Hyper Trainer Marking Language","Hyper Text Markup Language","Hyper Text Marketing Language","None"],
+        answer: "Hyper Text Markup Language"
+ },
+{
+        question:"Which CSS property is used for color?",
+        options:["background", "font","color" ,"style"],
+        answer:"color"   
+},
+{
+        question: "JavaScript is used for?",
+        options : ["Designing","Logic &Interaction","Storage","Printing"],
+        answer : "Logic &Interaction"
+},
+
+{
+        question: "Which is a browser?",
+        options :["Chrome","Windows","Linux","Excel"],
+        answer : "Chrome"
+
+},
+{
+        question : "What does CPU stand for?",
+        options : ["Central Processing Unit", "Computer Personal Unit","Control Panel Unit","Central Power Unit"],
+        answer : "Central Processing Unit"
+},
+];
+
+startBtn.onclick = function () {
+    startBtn.style.display = "none";
+    quizBox.style.display = "block";
+    showQuestion();
+};
+
+
+function showQuestion() {
+    let q = questions[currentQuestion];
+    questionEl.innerText = q.question;
+
+    optionsEl.innerHTML = "";
+
+    q.options.forEach(options => {
+        let btn = document.createElement("button");
+        btn.innerText = options;
+
+        btn.onclick = function () {
+            checkAnswer(options);
+        };
+
+        optionsEl.appendChild(btn);
+    });
+}
+
+
+function checkAnswer(selected) {
+    if (selected === questions[currentQuestion].answer) {
+        score++;
+    }
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        showResult();
+    }
+}
+    
+function showResult() {
+    quizBox.innerHTML = "";
+    resultBox.style.display = "block";
+    scoreEl.innerText = "Your Score: " + score;
+}
+
+
+restartBtn.onclick = function () {
+    location.reload();
+};
+
+
+</script>
